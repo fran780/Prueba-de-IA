@@ -122,6 +122,9 @@ body {
     color: #0047ab;
     font-size: 14px;
 }
+/*/<script>
+   (function () { if (!window.chatbase || window.chatbase("getState") !== "initialized") { window.chatbase = (...arguments) => { if (!window.chatbase.q) { window.chatbase.q = [] } window.chatbase.q.push(arguments) }; window.chatbase = new Proxy(window.chatbase, { get(target, prop) { if (prop === "q") { return target.q } return (...args) => target(prop, ...args) } }) } const onLoad = function () { const script = document.createElement("script"); script.src = "https://www.chatbase.co/embed.min.js"; script.id = "jsg0lQkO90Z2KdLwcjclX"; script.domain = "www.chatbase.co"; document.body.appendChild(script) }; if (document.readyState === "complete") { onLoad() } else { window.addEventListener("load", onLoad) } })();
+</script>*/
 
 .footer {
     text-align: center;
@@ -129,4 +132,126 @@ body {
     font-size: 12px;
     color: gray;
     margin-bottom: 50px;
+}
+
+/* Contenedor del dashboard */
+.dashboard-container {
+    padding-top: 120px;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+/* Título de bienvenida alineado a la izquierda */
+.welcome {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.welcome h2 {
+    color: #0047ab;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.welcome p {
+    color: #666;
+    font-size: 14px;
+}
+
+/* Contenedor de los módulos */
+.modules {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    justify-content: center;
+    margin: 0 auto 50px auto;
+    max-width: 1000px;
+    cursor: pointer;
+}
+
+/* Caja de módulo (ajustada a tamaño real) */
+.module {
+    background-color: #0047ab;
+    color: white;
+    padding: 30px 20px;
+    border-radius: 20px;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 160px;
+    transition: 0.3s;
+}
+
+/* Módulo verde */
+.module.green {
+    background-color: #2e7d32;
+}
+
+/* Icono dentro del módulo (puedes agregar SVG o íconos web más adelante) */
+.module i {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+/* Hover */
+.module:hover {
+    opacity: 0.9;
+}
+
+/* Sección del video */
+.video {
+    font-size: 16px;
+    color: gray;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.user-name {
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    margin-left: auto;
+    margin-right: 10px; /* más cerca del menú */
+}
+
+/* Menú hamburguesa */
+.menu-icon {
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 10px;
+}
+
+/* Menú desplegable (más elegante y blanco) */
+.dropdown-menu {
+    position: absolute;
+    top: 70px;
+    right: 10px;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px 0;
+    display: none;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    z-index: 1001;
+    width: 180px;
+}
+
+/* Estilo de las opciones del menú */
+.dropdown-menu a {
+    display: block;
+    padding: 12px 20px;
+    text-decoration: none;
+    color: #333;
+    font-size: 15px;
+    transition: background-color 0.2s;
+}
+
+/* Hover sobre opciones */
+.dropdown-menu a:hover {
+    background-color: #f0f0f0;
 }

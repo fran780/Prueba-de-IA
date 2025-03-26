@@ -1,18 +1,100 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Página con Botsonic</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bienvenido - UNICAH</title>
+    <link rel="stylesheet" href="estilo.css" />
+    <script src="menu.js"></script>
 </head>
+
 <body>
 
-    <h1>Bienvenido a mi página</h1>
-    <p>Esta es una prueba del chatbot Botsonic.</p>
+    <!-- Barra superior -->
+    <div class="header">
+        <div class="header-logo">
+            <img src="imagenes/NewLogo.png" alt="UNICAH Logo">
+        </div>
+        <div class="user-name"
+            style="color: white; margin-left: auto; margin-right: 20px; font-size: 13px; font-weight: bold;">FRANCISCO
+            FERNÁNDEZ</div>
+            <div class="menu-icon" onclick="toggleMenu()">☰</div>
 
-    <!-- Botsonic Chatbot -->
+            <!-- Menú desplegable -->
+            <div class="dropdown-menu" id="dropdownMenu">
+              <a href="index.html">Cerrar sesión</a>
+            </div>
+    </div>
+
+    <!-- Contenido principal -->
+    <div class="dashboard-container">
+        <div class="welcome">
+            <h2>Bienvenido</h2>
+            <p>Seleccione el sistema al que desea acceder.</p>
+        </div>
+
+        <div class="modules">
+            <div class="module blue">
+                <i class="icon">📹</i>
+                Aula Virtual
+            </div>
+            <div class="module blue">
+                <i class="icon">📚</i>
+                Bibliotecas
+            </div>
+            <div class="module green">
+                <i class="icon">🔲</i>
+                Registro 2025<br>Matrícula
+            </div>
+            <div class="module blue">
+                <i class="icon">🖥️</i>
+                Servicios Académicos
+            </div>
+            <div class="module blue">
+                <i class="icon">🎓</i>
+                Moodle 2024 (Nuevo)
+            </div>
+            <div class="module blue">
+                <i class="icon">🎓</i>
+                Moodle ICB
+            </div>
+        </div>
+    </div>
+
+    <div class="video">
+        <h3>Matricula</h3>
+        <br>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/r4qTP5Le8ho" title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen=""></iframe>
+    </div>
+
+    /<script>
+        (function () { if (!window.chatbase || window.chatbase("getState") !== "initialized") { window.chatbase = (...arguments) => { if (!window.chatbase.q) { window.chatbase.q = [] } window.chatbase.q.push(arguments) }; window.chatbase = new Proxy(window.chatbase, { get(target, prop) { if (prop === "q") { return target.q } return (...args) => target(prop, ...args) } }) } const onLoad = function () { const script = document.createElement("script"); script.src = "https://www.chatbase.co/embed.min.js"; script.id = "jsg0lQkO90Z2KdLwcjclX"; script.domain = "www.chatbase.co"; document.body.appendChild(script) }; if (document.readyState === "complete") { onLoad() } else { window.addEventListener("load", onLoad) } })();
+     </script>
+
+    <div class="footer">
+        Universidad Católica de Honduras © 2025
+    </div>
+    </div>
+
     <script>
-        (function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="jsg0lQkO90Z2KdLwcjclX";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
-        </script>
+        function toggleMenu() {
+          const menu = document.getElementById("dropdownMenu");
+          menu.style.display = menu.style.display === "block" ? "none" : "block";
+        }
+      
+        // Cierra el menú si haces clic fuera
+        document.addEventListener("click", function(e) {
+          const menu = document.getElementById("dropdownMenu");
+          const icon = document.querySelector(".menu-icon");
+          if (!menu.contains(e.target) && !icon.contains(e.target)) {
+            menu.style.display = "none";
+          }
+        });
+      </script>
 </body>
+
 </html>

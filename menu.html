@@ -11,7 +11,6 @@
 
 <body>
 
-    <!-- Barra superior -->
     <div class="header">
         <div class="header-logo">
             <img src="imagenes/NewLogo.png" alt="UNICAH Logo">
@@ -19,15 +18,12 @@
         <div class="user-name"
             style="color: white; margin-left: auto; margin-right: 20px; font-size: 13px; font-weight: bold;">FRANCISCO
             FERNÁNDEZ</div>
-            <div class="menu-icon" onclick="toggleMenu()">☰</div>
-
-            <!-- Menú desplegable -->
-            <div class="dropdown-menu" id="dropdownMenu">
-              <a href="index.html">Cerrar sesión</a>
-            </div>
+        <div class="menu-icon" onclick="toggleMenu()">☰</div>
+        <div class="dropdown-menu" id="dropdownMenu">
+            <a href="index.html">Cerrar sesión</a>
+        </div>
     </div>
 
-    <!-- Contenido principal -->
     <div class="dashboard-container">
         <div class="welcome">
             <h2>Bienvenido</h2>
@@ -71,9 +67,9 @@
             allowfullscreen=""></iframe>
     </div>
 
-    /<script>
+    <script>
         (function () { if (!window.chatbase || window.chatbase("getState") !== "initialized") { window.chatbase = (...arguments) => { if (!window.chatbase.q) { window.chatbase.q = [] } window.chatbase.q.push(arguments) }; window.chatbase = new Proxy(window.chatbase, { get(target, prop) { if (prop === "q") { return target.q } return (...args) => target(prop, ...args) } }) } const onLoad = function () { const script = document.createElement("script"); script.src = "https://www.chatbase.co/embed.min.js"; script.id = "jsg0lQkO90Z2KdLwcjclX"; script.domain = "www.chatbase.co"; document.body.appendChild(script) }; if (document.readyState === "complete") { onLoad() } else { window.addEventListener("load", onLoad) } })();
-     </script>
+    </script>
 
     <div class="footer">
         Universidad Católica de Honduras © 2025
@@ -82,19 +78,18 @@
 
     <script>
         function toggleMenu() {
-          const menu = document.getElementById("dropdownMenu");
-          menu.style.display = menu.style.display === "block" ? "none" : "block";
+            const menu = document.getElementById("dropdownMenu");
+            menu.style.display = menu.style.display === "block" ? "none" : "block";
         }
-      
-        // Cierra el menú si haces clic fuera
-        document.addEventListener("click", function(e) {
-          const menu = document.getElementById("dropdownMenu");
-          const icon = document.querySelector(".menu-icon");
-          if (!menu.contains(e.target) && !icon.contains(e.target)) {
-            menu.style.display = "none";
-          }
+
+        document.addEventListener("click", function (e) {
+            const menu = document.getElementById("dropdownMenu");
+            const icon = document.querySelector(".menu-icon");
+            if (!menu.contains(e.target) && !icon.contains(e.target)) {
+                menu.style.display = "none";
+            }
         });
-      </script>
+    </script>
 </body>
 
 </html>

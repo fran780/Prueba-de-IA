@@ -23,8 +23,8 @@ document.getElementById("loginForm").addEventListener("submit", function(event) 
     }
 
 
-    const usuarioCorrecto = "admin";
-    const contraseñaCorrecta = "12345";
+    const usuarioCorrecto = "0105200400336";
+    const contraseñaCorrecta = "Usuario1234";
 
     if (valid) {
         if (usuario.value.trim() === usuarioCorrecto && contraseña.value.trim() === contraseñaCorrecta) {
